@@ -6,10 +6,11 @@ public class Main {
     public static String output1 = "";
     public static String output2 = "";
     public static String output3 = "";
+    public static String output4 = "";
     public static String number1;
     public static String number2;
     public static String number3;
-    //public static String number4;
+    public static String number4;
     //public static String number5;
 
 
@@ -36,6 +37,15 @@ public class Main {
             number3 = parameters[0];
             number2 = parameters[1];
             number1 = parameters[2];
+            convertNumber3();
+            convertNumber2();
+            convertNumber1();
+        } else if (parameters.length == 4) {
+            number4 = parameters[0];
+            number3 = parameters[1];
+            number2 = parameters[2];
+            number1 = parameters[3];
+            convertNumber4();
             convertNumber3();
             convertNumber2();
             convertNumber1();
@@ -90,12 +100,29 @@ public class Main {
         convertNumber2();
     }
 
+    public static void convertNumber4 () {
+        switch (number4) {
+            case "1" -> output4 = "M";
+            case "2" -> output4 = "MM";
+            case "3" -> output4 = "MMM";
+            case "4" -> output4 = "CD";
+            case "5" -> output4 = "V+0305";
+            case "6" -> output4 = "DC";
+            case "7" -> output4 = "DCC";
+            case "8" -> output4 = "DCCC";
+            case "9" -> output4 = "CM";
+            default -> output4 = " ";
+        }
+        convertNumber3();
+    }
+
     public static void outputNumber() {
-        System.out.println(output3 + output2 + output1);
+        System.out.println(output4 + output3 + output2 + output1);
         //parameters = new String[0];
-        output1 = "";
-        output2 = "";
-        output3 = "";
+        output1 = "M";
+        output2 = "MM";
+        output3 = "MMM";
+        output4 = "M" +  ("V" + "\u0305");
         menu();
     }
 }
