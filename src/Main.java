@@ -105,12 +105,12 @@ public class Main {
             case "1" -> output4 = "M";
             case "2" -> output4 = "MM";
             case "3" -> output4 = "MMM";
-            case "4" -> output4 = "CD";
-            case "5" -> output4 = "V+0305";
-            case "6" -> output4 = "DC";
-            case "7" -> output4 = "DCC";
-            case "8" -> output4 = "DCCC";
-            case "9" -> output4 = "CM";
+            case "4" -> output4 = "M" + "V\u0305";
+            case "5" -> output4 = "V\u0305";
+            case "6" -> output4 = "V\u0305" + "M";
+            case "7" -> output4 = "V\u0305" + "MM";
+            case "8" -> output4 = "V\u0305" + "MMM";
+            case "9" -> output4 = "M" + "X\u0305";
             default -> output4 = " ";
         }
         convertNumber3();
@@ -118,11 +118,11 @@ public class Main {
 
     public static void outputNumber() {
         System.out.println(output4 + output3 + output2 + output1);
-        //parameters = new String[0];
-        output1 = "M";
-        output2 = "MM";
-        output3 = "MMM";
-        output4 = "M" +  ("V" + "\u0305");
+        output1 = "";
+        output2 = "";
+        output3 = "";
+        output4 = "";
+
         menu();
     }
 }
